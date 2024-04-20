@@ -38,17 +38,17 @@ class BTreeNode:
     def search(self,val):
         if self.data==val:
             return True
-        if val< self.data:
+        if val < self.data:
             if self.left:
                 self.left.search(val)
             else:
                 return False
-        else:
+        if val > self.data:
             if self.right:
                 self.right.search(val)
             else:
                 return False
-            self.right.search(val)
+            
 
 
     
@@ -64,3 +64,5 @@ if __name__ =="__main__":
     
     tree_num = build_tree(num)
     print(tree_num.Inorder())
+    print(tree_num.search(3))
+    # print(tree_num.Inorder())
