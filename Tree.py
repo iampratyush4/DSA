@@ -18,17 +18,13 @@ class TreeNode:
     
     def print_tree(self):
         spaces= '  ' * self.get_level() *3
-        prefix =spaces + "|_ _ " if self.parent else ""
+        prefix = spaces + "|_ _ " if self.parent else ""
         print(prefix + self.data)
         if self.children:
         
             for child in self.children:
                 child.print_tree()
         
-
-
-
-
 def build_product():
     root=TreeNode("Electronice")
 
