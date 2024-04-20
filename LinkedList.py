@@ -50,27 +50,7 @@ class LinkedList:
             n=n.next
             count+=1
         
-    def insertat(self,ind,data):
-        #  node=Node(data,None)
-        if ind <0 or ind >= self.getlength()+1:
-            return
-        if ind ==0 :
-             self.insert_at_begining(data)
-        
-        count=0
-        n=self.head
-        node=Node(data,None)
-        while n:
-            if (count== ind-1):
-                # temp=n.next
-                # n.next=node
-                # node.next=temp
-                # or we can also do it like below code
-                node=Node(data,n.next)
-                n.next=node
-            n=n.next
-            count+=1
-        
+   
         
     
     def Printll(self):
