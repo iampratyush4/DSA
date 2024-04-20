@@ -13,6 +13,8 @@ class TreeNode:
         if self.children:
             for child in self.children:
                 child.print_tree()
+        
+
 
 
 
@@ -31,9 +33,12 @@ def build_product():
 
     root.add_child(laptop)
     root.add_child(Cellphone)
-
     
-    root.add_child(laptop)
+    return root
+    
+    
  
 if __name__ == '__main__':
-    build_product()
+   root= build_product()
+   root.print_tree()
+   pass
