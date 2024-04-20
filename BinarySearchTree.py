@@ -17,3 +17,33 @@ class BTreeNode:
                 self.right.add_child(data)
             else:
                 self.right=BTreeNode(data)
+
+
+    def Inorder(self):
+        elements=[]
+
+        # visit left tree first
+        if self.left:
+            elements +=self.left.Inorder()
+
+        # visit base node
+        elements.append(self.data)
+
+        # visit right tree
+        if self.right:
+
+            elements += self.right.Inorder()
+        return elements
+    
+def build_tree(elements):
+    root=BTreeNode(elements[0])
+    for i in range(1,len(elements)):
+        root.add_child(elements[i])
+    return root
+        
+
+if __name__ =="__main__":
+    num=[1,324,54,3,25,342,53,23,3]
+    
+    tree_num = build_tree(num)
+    print(tree_num)
