@@ -1,3 +1,5 @@
+# get either name or designation or both
+
 class TreeNode:
     def __init__(self,data1,data2):
         self.data1=data1
