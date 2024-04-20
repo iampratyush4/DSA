@@ -46,7 +46,7 @@ class BTreeNode:
     def find_max(self):
         if self.right is None:
             return self.data
-        return self.right.find_max
+        return self.right.find_max()
 
             
     
@@ -62,5 +62,7 @@ if __name__ =="__main__":
     
     tree_num = build_tree(num)
     # print(tree_num.Inorder())
-    print(tree_num.search(324))
+    # print(tree_num.search(324))
+    print(tree_num.find_max())
+    print(tree_num.find_min())
     
