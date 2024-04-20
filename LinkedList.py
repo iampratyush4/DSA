@@ -31,7 +31,24 @@ class LinkedList:
         return count
         
             
- 
+    def insertlist(self,listll):
+        self.head=None
+        for data in listll:
+            self.insertEnd(data)
+            
+    def Deleteatindex(self,ind):
+        if ind<0 or ind >= self.getlength():
+            return
+        if ind==0:
+            self.head=self.head.next
+            
+        count=0
+        n=self.head
+        while n:
+            if (count== ind-1):
+                n.next=n.next.next
+            n=n.next
+            count+=1
         
     def insertat(self,ind,data):
         #  node=Node(data,None)
