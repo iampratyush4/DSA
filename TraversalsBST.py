@@ -45,11 +45,30 @@ class BTreeNode:
         # visit left tree first
 
         if self.left:
-            elements +=self.left.Inorder()
+            elements +=self.left.Preorder()
         # visit right tree  
         if self.right:
 
-            elements += self.right.Inorder()
+            elements += self.right.Preorder()
+        return elements
+    
+    def PostOrder(self):
+        elements=[]
+
+        
+
+        # visit left tree first
+
+        if self.left:
+            elements +=self.left.PostOrder()
+        # visit right tree  
+        if self.right:
+
+            elements += self.right.PostOrder()
+
+        # visit base node
+
+        elements.append(self.data)
         return elements
 
     
@@ -71,4 +90,5 @@ if __name__ =="__main__":
     print(tree_num.Inorder())
     # print(tree_num.search(324))
     print(tree_num.Preorder())
+    print(tree_num.PostOrder())
     
