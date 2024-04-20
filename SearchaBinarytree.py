@@ -35,6 +35,23 @@ class BTreeNode:
             elements += self.right.Inorder()
         return elements
     
+    def search(self,val):
+        if self.data==val:
+            return True
+        if val< self.data:
+            if self.left:
+                self.left.search(val)
+            else:
+                return False
+        else:
+            if self.right:
+                self.right.search(val)
+            else:
+                return False
+            self.right.search(val)
+
+
+    
 def build_tree(elements):
     root=BTreeNode(elements[0])
     for i in range(1,len(elements)):
