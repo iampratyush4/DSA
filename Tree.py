@@ -14,9 +14,11 @@ class TreeNode:
         while p:
             level +=1
             p=p.parent
+        return level
     
     def print_tree(self):
-        print(self.data)
+        spaces= '  ' * self.get_level()
+        print(spaces + self.data)
         if self.children:
         
             for child in self.children:
@@ -48,5 +50,6 @@ def build_product():
  
 if __name__ == '__main__':
    root= build_product()
+
    root.print_tree()
    pass
