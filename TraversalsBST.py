@@ -35,18 +35,25 @@ class BTreeNode:
             elements += self.right.Inorder()
         return elements
     
-    # Find the last left most node  that will be the minimum value
+    def Preorder(self):
+        elements=[]
 
-    def find_min(self):
-        if self.left is None:
-            return self.data
-        return self.left.find_min()
+        # visit base node
+
+        elements.append(self.data)
+
+        # visit left tree first
+
+        if self.left:
+            elements +=self.left.Inorder()
+        # visit right tree  
+        if self.right:
+
+            elements += self.right.Inorder()
+        return elements
+
     
-    # Find the last right most node  that will be the maximum value
-    def find_max(self):
-        if self.right is None:
-            return self.data
-        return self.right.find_max
+
 
             
     
@@ -61,6 +68,7 @@ if __name__ =="__main__":
     num=[1,324,54,3,25,342,53,23,3,3]
     
     tree_num = build_tree(num)
-    # print(tree_num.Inorder())
-    print(tree_num.search(324))
+    print(tree_num.Inorder())
+    # print(tree_num.search(324))
+    print(tree_num.Preorder())
     
