@@ -7,6 +7,13 @@ class TreeNode:
     def add_child(self,child):
         child.parent=self
         self.children.append(child)
+    
+    def print_tree(self):
+        print(self.data)
+        if self.children:
+            for child in self.children:
+                child.print_tree()
+                
 
 
 def build_product():
