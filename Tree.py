@@ -14,3 +14,5 @@ def build_product():
     laptop = TreeNode("Laptop")
     root.add_child(laptop)
 
+if __name__ = '__main__':
+    build_product()
