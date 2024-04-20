@@ -10,9 +10,9 @@ class TreeNode:
 
 
 def build_product():
-    root=Treenode("Electronice")
+    root=TreeNode("Electronice")
     laptop = TreeNode("Laptop")
     root.add_child(laptop)
-
-if __name__ = '__main__':
+ 
+if __name__ == '__main__':
     build_product()
