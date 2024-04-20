@@ -35,27 +35,58 @@ class BST:
             else:
                 self.right= BST(data)
 
-    def delete(self, val):
-        if self.data == val:
-            r
+        
 
+    def find_min(self):
+        if self.left is None:
+            return self.data
+        return self.left.find_min()
+
+
+
+        
+            
+
+
+
+
+    def delete(self, val):
         if val < self.data:
             if self.left:
-                self.left= self.left.delete(val)
-            else:
-                return False
-
-        if val > self.data:
+                self.left = self.left.delete(val)
+        elif val > self.data:
             if self.right:
-                self.right= self.right.delete(val)
-            else:
-                return False
-        if self.left is None and self.right is None:
-            return None
-        if self.left is None:
-            return self.right
-        if self.right is None:
-            return self.left    
+                self.right = self.right.delete(val)
+        else:
+            if self.left is None and self.right is None:
+                return None
+            elif self.left is None:
+                return self.right
+            elif self.right is None:
+                return self.left
+
+            min_val = self.right.find_min()
+            self.data = min_val
+            self.right = self.right.delete(min_val)
+
+        return self
+    
+    def Inorder(self):
+        elements=[]
+
+        # visit left tree first
+        if self.left:
+            elements +=self.left.Inorder()
+
+        # visit base node
+        elements.append(self.data)
+
+        # visit right tree
+        if self.right:
+
+            elements += self.right.Inorder()
+        return elements
+
 
 def build_tree(elements):
     root= BST(elements[0])
@@ -68,9 +99,9 @@ if __name__ =="__main__":
     
     tree_num = build_tree(num)
     print(tree_num.Inorder())
-    # print(tree_num.search(324))
-    print(tree_num.Preorder())
-    print(tree_num.PostOrder())
+  
+    print(tree_num.delete(324))
+    print(tree_num.Inorder())
 
 
 
