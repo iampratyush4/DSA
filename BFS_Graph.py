@@ -8,5 +8,34 @@ Method 1-
     4- now we have to just find the level order traversal of this tree
     5- and this traversal result would be the BFS answer
 
+Method 2 -
+    1- create a queue named explored_queue  which will have all nodes that are explored
+    2- create a visited list
 
 """
+
+import collections
+
+
+def bfs(graph,startnode):
+    visited=set()
+    queue=collections.deque([startnode])
+    # when we deque a element from a queue we will insert it into the visited set
+    while queue:
+        popedNode=queue.popleft()
+        visited.add(popedNode)
+        for i in graph[popedNode]:
+            
+
+    return
+
+if __name__=="__main__":
+    graph={
+        0:[1,2,3],
+        1:[0,2],
+        2:[0,1],
+        3:[0],
+        4:[2]
+    }
+    nodetostart=0
+    bfs(graph,nodetostart)
