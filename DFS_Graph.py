@@ -1,4 +1,7 @@
 
+"""
+we use stack in DFS compared to BFS where queue was used.
+"""
 def dfs(visited,graph,startnode):
     if startnode not in visited:
         print(startnode)
@@ -9,7 +12,6 @@ def dfs(visited,graph,startnode):
 
 
 if __name__=="__main__":
-
     graph={
         'A':['B','C','D'],
         'B':['E'],
