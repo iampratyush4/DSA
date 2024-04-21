@@ -55,17 +55,21 @@ if __name__ =='__main__':
 
     routes = [
 
-        ("Mumbai", "Paris"),
-        ("Mumbai", "Dubai"),
-        ("Paris", "Dubai"),
-        ("Paris", "New York"),
-        ("Dubai", "New York"),
-        ("New York", "Toronto"),
+        ("0", "1"),
+        ("0", "2"),
+        ("0", "3"),
+        ("1", "3"),
+        ("2", "3"),
+        ("3", "2"),
+        ("2", "4"),
+        ("3", "4"),
+        ("4", "6"),
+        ("4", "5")
     ]
 
-    start="Mumbai"
+    start= "1"
 
-    end="New York"
+    end= "6"
 
 
 route_graph=Graph(routes)
