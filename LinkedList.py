@@ -86,6 +86,22 @@ class LinkedList:
         for data in data_list:
             self.insert_at_end(data)
 
+    def reverse(self):
+        if self.head is None:
+            return "LinkedList is Empty"
+        if self.get_length==1:
+            return self.head.data
+        itr =self.head
+        l=""
+
+        while itr:
+            l= "<--" + str(itr.data)  + l  if itr.next else str(itr.data)  + l 
+            itr=itr.next
+
+
+        return l
+
+
 
 if __name__ == '__main__':
     ll = LinkedList()
@@ -97,3 +113,4 @@ if __name__ == '__main__':
     ll.insert_values([45,7,12,567,99])
     ll.insert_at_end(67)
     ll.print()
+    print(ll.reverse())
