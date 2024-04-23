@@ -86,6 +86,7 @@ class LinkedList:
         for data in data_list:
             self.insert_at_end(data)
 
+
     def reverse(self):
         if self.head is None:
             return "LinkedList is Empty"
@@ -97,7 +98,6 @@ class LinkedList:
         while itr:
             l= "<--" + str(itr.data)  + l  if itr.next else str(itr.data)  + l 
             itr=itr.next
-
 
         return l
 
