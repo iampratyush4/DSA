@@ -128,16 +128,32 @@ class LinkedList:
         
         print(llstr)
     
-    def reverseLinkedList(self,head):
+    def reverseLinkedListusingrecursion(self,head):
 
         if head.next is None or head is None:
             return head
-        newhead = self.reverseLinkedList(head.next)
+        newhead = self.reverseLinkedListusingrecursion(head.next)
         front=head.next
         front.next=head
         head.next=None
         self.head=newhead   #this will set the head for overall linkedlist to newhead.
         return newhead
+    
+    def deleteduplicate(self):
+        pointer= self.head
+        pointer = self.head
+        if self.head is not None:
+            while pointer.next is not None:
+                if pointer.data == pointer.next.data:
+                    pointer.next = pointer.next.next
+                else:
+                    pointer = pointer.next
+        return self.head
+        
+
+        
+
+
 
 
 
@@ -148,14 +164,16 @@ if __name__ == '__main__':
     # ll.remove_at(2)
     # ll.print()
 
-    ll.insert_values([45,7,12,567,99])
+    ll.insert_values([1,1,2,3,4,4,5,5,5,6,6])
 
     # ll.insert_at_end(67)
     ll.print()
-    # print(ll.reverse())
-    # print(ll.reverselinks())
-    # ll.print()
-    ll.reverseLinkedList(ll.head)
+    print(ll.reverse())
+    print(ll.reverselinks())
+    ll.print()
+    ll.reverseLinkedListusingrecursion(ll.head)
+    ll.print()
+    print(ll.deleteduplicate())
     ll.print()
 
 
