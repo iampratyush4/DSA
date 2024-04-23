@@ -7,17 +7,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def print(self):
-        if self.head is None:
-            print("Linked list is empty")
-            return
-        itr = self.head
-        llstr = ''
-        while itr:
-            llstr += str(itr.data)+' --> ' if itr.next else str(itr.data)
-            itr = itr.next
-        print(llstr)
-
+    
     def get_length(self):
         count = 0
         itr = self.head
@@ -92,25 +82,80 @@ class LinkedList:
             return "LinkedList is Empty"
         if self.get_length==1:
             return self.head.data
+        
         itr =self.head
+
         l=""
 
         while itr:
-            l= "<--" + str(itr.data)  + l  if itr.next else str(itr.data)  + l 
+            l=( "<--" + str(itr.data)  + l ) if itr.next else (str(itr.data)  + l )
             itr=itr.next
 
         return l
+    
+    def reverselinks(self):
+        if self.head is None:
+            return "LinkedList is Empty"
+        if self.get_length==1:
+            return self.head.data
+        
+        itr =self.head
+        prev=None
+
+        while (itr is not None ):
+            front=itr.next
+            itr.next=prev
+            prev=itr
+            itr=front
+           
+
+        self.head=prev
+        
+        return prev
+    
+
+    def print(self):
+        
+        if self.head is None:
+            print("Linked list is empty")
+            return
+        itr = self.head
+        # print("Recursive approch is ",ll.reverseLinkedList(self.head))
+        llstr = ''
+        while itr:
+            llstr += str(itr.data)+' --> ' if itr.next else str(itr.data)
+            itr = itr.next
+        
+        print(llstr)
+    
+    def reverseLinkedList(self,head):
+
+        if head.next is None or head is None:
+            return head
+        newhead = self.reverseLinkedList(head.next)
+        front=head.next
+        front.next=head
+        head.next=None
+        self.head=newhead
+        return newhead
 
 
 
 if __name__ == '__main__':
     ll = LinkedList()
-    ll.insert_values(["banana","mango","grapes","orange"])
-    ll.insert_at(1,"blueberry")
-    ll.remove_at(2)
-    ll.print()
+    # ll.insert_values(["banana","mango","grapes","orange"])
+    # ll.insert_at(1,"blueberry")
+    # ll.remove_at(2)
+    # ll.print()
 
     ll.insert_values([45,7,12,567,99])
-    ll.insert_at_end(67)
+
+    # ll.insert_at_end(67)
     ll.print()
-    print(ll.reverse())
+    # print(ll.reverse())
+    # print(ll.reverselinks())
+    # ll.print()
+    ll.reverseLinkedList(ll.head)
+    ll.print()
+
+

@@ -43,6 +43,7 @@ def build_tree(elements):
         
 
 if __name__ =="__main__":
+    
     num=[1,324,54,3,25,342,53,23,3,3]
     
     tree_num = build_tree(num)
