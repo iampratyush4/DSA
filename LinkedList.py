@@ -136,7 +136,7 @@ class LinkedList:
         front=head.next
         front.next=head
         head.next=None
-        self.head=newhead
+        self.head=newhead   #this will set the head for overall linkedlist to newhead.
         return newhead
 
 
