@@ -39,30 +39,29 @@ class BTreeNode:
     def search(self, val):
         if self.data == val:
             return True
-
+        
         if val < self.data:
+
             if self.left:
                 return self.left.search(val)
             else:
                 return False
 
         if val > self.data:
+
             if self.right:
                 return self.right.search(val)
             else:
                 return False
-
             
 
-
-    
 def build_tree(elements):
     root=BTreeNode(elements[0])
     for i in range(1,len(elements)):
         root.add_child(elements[i])
     return root
         
-
+    # if main
 if __name__ =="__main__":
     num=[1,324,54,3,25,342,53,23,3,3]
     
