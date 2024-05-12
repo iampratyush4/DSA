@@ -9,4 +9,6 @@ if __name__ == "__main__":
     find=5
     indexlinear =linear_search(numlist,find)
     print(f"Number found at index {indexlinear} using linear search")
+
+# linear_search
    
