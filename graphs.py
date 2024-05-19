@@ -21,7 +21,7 @@ class Graph:
         # if start and end points are same then return itselfs
         if start==end:
             return [path]
-        # if origin itself is not present in graph then return empty list
+        # if origin itself is not present in graph then return empty lists
         if start not in self.graph_dict:
             return []
         paths=[]
