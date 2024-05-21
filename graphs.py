@@ -18,7 +18,7 @@ class Graph:
 
     def get_paths(self,start,end,path=[]):
         path =path + [start]
-        # if start and end points are same then return itselfs
+        # if start and end points are same then return itselfss
         if start==end:
             return [path]
         # if origin itself is not present in graph then return empty listss
