@@ -46,12 +46,9 @@ def build_product():
     
     return root
     
-    
- 
 if __name__ == '__main__':
    root= build_product()
 
    root.print_tree()
    pass
 
-# end
