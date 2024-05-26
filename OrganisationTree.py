@@ -34,7 +34,7 @@ def build_product():
     CTO = TreeNode("Anu","CTO")
     CTO.add_child(TreeNode("Vishwa","Infra head"))
     CTO.add_child(TreeNode("dhaval","app maangaer"))
-    # laptop.add_child(TreeNode("Thinkpad"))
+    # laptop.add_child(TreeNode("Thinkpad")))
    
     HR_Head=TreeNode("Nishant","HR Head")
     HR_Head.add_child(TreeNode("Peter","recuritor"))
