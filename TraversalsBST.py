@@ -22,7 +22,7 @@ class BTreeNode:
     def Inorder(self):
         elements=[]
 
-        # visit left tree first
+        # visit left tre fisrt
         if self.left:
             elements +=self.left.Inorder()
 
